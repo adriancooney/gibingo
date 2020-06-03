@@ -141,7 +141,7 @@ export default class Index extends Component<SheetProps> {
     const visibleNumbers = pickedNumbers.slice(0, remainingNumberCount > 0 ? -1 : pickedNumbers.length);
     const winningUsers = range(1, USER_COUNT).map(user => ({
       user,
-      winnings: pickSquareSheetWithFreeSquareWinningsForUser(user, this.props.game, this.props.entropy, pickedNumbers),
+      winnings: pickSquareSheetWithFreeSquareWinningsForUser(user, this.props.game, pickedNumbers),
     })).filter(({ winnings }) => winnings);
 
     return (
